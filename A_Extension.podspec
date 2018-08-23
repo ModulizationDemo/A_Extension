@@ -16,8 +16,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "A_Extension"
-  s.version      = "3"
+  s.version      = "4"
   s.summary      = "A_Extension."
+  s.swift_version= "4.2"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
