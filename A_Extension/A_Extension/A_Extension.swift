@@ -8,7 +8,7 @@
 
 import CTMediator
 
-extension CTMediator {
+public extension CTMediator {
     public func A_showSwift(callback:@escaping (String) -> Void) -> UIViewController? {
         let params = [
             "callback":callback,

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "A_Extension"
-  s.version      = "9"
+  s.version      = "10"
   s.summary      = "A_Extension."
   s.swift_version= "4.2"
 
