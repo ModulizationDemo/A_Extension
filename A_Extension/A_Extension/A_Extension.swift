@@ -9,7 +9,7 @@
 import CTMediator
 
 public extension CTMediator {
-    public func A_showSwift(callback:@escaping (String) -> Void) -> UIViewController? {
+    @objc public func A_showSwift(callback:@escaping (String) -> Void) -> UIViewController? {
         let params = [
             "callback":callback,
             kCTMediatorParamsKeySwiftTargetModuleName:"A_swift"
@@ -20,7 +20,7 @@ public extension CTMediator {
         return nil
     }
     
-    public func A_showObjc(callback:@escaping (String) -> Void) -> UIViewController? {
+    @objc public func A_showObjc(callback:@escaping (String) -> Void) -> UIViewController? {
         let callbackBlock = callback as @convention(block) (String) -> Void
         let callbackBlockObject = unsafeBitCast(callbackBlock, to: AnyObject.self)
         let params = ["callback":callbackBlockObject] as [AnyHashable:Any]
