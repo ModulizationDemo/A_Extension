@@ -9,12 +9,12 @@
 import CTMediator
 
 extension CTMediator {
-    public func A_show(callback:@escaping (String) -> Void) -> UIViewController? {
+    public func A_showSwift(callback:@escaping (String) -> Void) -> UIViewController? {
         let params = [
             "callback":callback,
             kCTMediatorParamsKeySwiftTargetModuleName:"A_swift"
             ] as [AnyHashable : Any]
-        if let viewController = self.performTarget("A", action: "viewController", params: params, shouldCacheTarget: false) as? UIViewController {
+        if let viewController = self.performTarget("A", action: "Extension_ViewController", params: params, shouldCacheTarget: false) as? UIViewController {
             return viewController
         }
         return nil
@@ -24,7 +24,7 @@ extension CTMediator {
         let callbackBlock = callback as @convention(block) (String) -> Void
         let callbackBlockObject = unsafeBitCast(callbackBlock, to: AnyObject.self)
         let params = ["callback":callbackBlockObject] as [AnyHashable:Any]
-        if let viewController = self.performTarget("A", action: "viewController", params: params, shouldCacheTarget: false) as? UIViewController {
+        if let viewController = self.performTarget("A", action: "Extension_ViewController", params: params, shouldCacheTarget: false) as? UIViewController {
             return viewController
         }
         return nil
